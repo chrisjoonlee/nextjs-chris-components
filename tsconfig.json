@@ -1,14 +1,17 @@
 {
     "compilerOptions": {
-      "target": "ESNext",
-      "module": "ESNext",
-      "jsx": "react-jsx",
-      "declaration": true,
-      "outDir": "dist",
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "strict": true
+      "target": "ESNext",                     // Good: Modern JS features
+      "module": "ESNext",                     // Good: Preserves ESM for bundlers
+      "jsx": "react-jsx",                     // Good: React 17+ JSX transform
+      "declaration": true,                    // Required: Generates .d.ts files
+      "declarationDir": "dist",               // Optional: Keep d.ts in same place as JS
+      "outDir": "dist",                       // Output location for built code
+      "moduleResolution": "node",             // Required: Standard for React + npm
+      "esModuleInterop": true,                // Required for compatibility
+      "allowSyntheticDefaultImports": true,   // Helps with default imports like React
+      "skipLibCheck": true,                   // Good for build performance
+      "strict": true                          // Good: Forces safe TS practices
     },
-    "include": ["components/**/*", "index.ts"]
+    "include": ["components/**/*", "index.ts"],
+    "exclude": ["dist", "node_modules"]
   }
