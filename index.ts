@@ -1,2 +1,2 @@
-export { Header } from "./components/Header";
-export { Main } from "./components/Main";
+export { default as Header } from "./components/Header";
+export { default as Main } from "./components/Main";

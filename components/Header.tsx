@@ -6,11 +6,11 @@ type HeaderProps = {
     right: React.ReactNode;
 };
 
-export const Header: React.FC<HeaderProps> = ({
+export default function Header({
     className = "",
     left,
     right,
-}) => {
+}: HeaderProps) {
     return (
         <header
             className={`w-full fixed top-0 left-0 z-50 flex items-center justify-between ${className}`}

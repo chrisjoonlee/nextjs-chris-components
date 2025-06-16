@@ -5,10 +5,10 @@ type MainProps = {
     content?: React.ReactNode;
 };
 
-export const Main: React.FC<MainProps> = ({
+export default function Main({
     className = "",
     content,
-}) => {
+}: MainProps) {
     return (
         <main
             className={`min-h-screen flex-1 ${className}`}
