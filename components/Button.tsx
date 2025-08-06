@@ -15,9 +15,9 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
         text,
         onClick,
         disabled = false,
-        bgColor = "bg-primary",
+        bgColor = "bg-blue-500",
         textColor = "text-white",
-        hoverColor = "bg-primary-light",
+        hoverColor = "bg-blue-600",
         onKeyDown,
     }, ref) => {
         return (
