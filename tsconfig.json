@@ -12,6 +12,6 @@
       "skipLibCheck": true,                   // Good for build performance
       "strict": true                          // Good: Forces safe TS practices
     },
-    "include": ["components/**/*", "index.ts"],
+    "include": ["components/**/*", "index.ts", "TestComponent.tsx"],
     "exclude": ["dist", "node_modules"]
   }

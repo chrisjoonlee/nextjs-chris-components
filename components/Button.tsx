@@ -1,12 +1,13 @@
 import React from 'react';
+import { bgColors, Color, hoverColors, textColors } from './colors';
 
 type Props = {
     text: string;
     onClick: () => void;
     disabled?: boolean;
-    bgColor?: string;
-    textColor?: string;
-    hoverColor?: string;
+    bgColor?: Color;
+    textColor?: Color;
+    hoverColor?: Color;
     onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
 }
 
@@ -15,18 +16,21 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
         text,
         onClick,
         disabled = false,
-        bgColor = "bg-blue-500",
-        textColor = "text-white",
-        hoverColor = "bg-blue-600",
+        bgColor = "blue",
+        textColor = "white",
+        hoverColor = "blue",
         onKeyDown,
     }, ref) => {
+        const finalClassName = `py-2 px-6 rounded-sm 
+            ${bgColors[bgColor]} ${textColors[textColor]} 
+            ${disabled ? "" : `cursor-pointer ${hoverColors[hoverColor]}`} 
+            disabled:opacity-50 transition`;
+
         return (
             <button
                 ref={ref}
                 tabIndex={0}
-                className={`py-2 px-6 rounded-sm ${bgColor} ${textColor} disabled:opacity-50 transition
-                hover:${hoverColor} ${disabled ? "" : "cursor-pointer"}
-            `}
+                className={`${finalClassName}`}
                 onClick={onClick}
                 disabled={disabled}
                 onKeyDown={onKeyDown}
